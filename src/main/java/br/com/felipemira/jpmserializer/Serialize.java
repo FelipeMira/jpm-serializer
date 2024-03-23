@@ -3,6 +3,8 @@ package br.com.felipemira.jpmserializer;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
 
 import java.util.Map;
@@ -17,13 +19,9 @@ import java.util.LinkedHashMap;
  date: 2024-03-17
  update: 2024-03-21
  */
+@Slf4j
+@NoArgsConstructor
 public class Serialize {
-
-    /***
-     * Construtor vazio
-     */
-    public Serialize() {
-    }
 
     /***
      * Converte um JSON em uma lista de Maps
@@ -76,7 +74,7 @@ public class Serialize {
      */
     public void printMap(Map<CharSequence, Object> map) {
         for (Map.Entry<CharSequence, Object> entry : map.entrySet()) {
-            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            log.info("Key: " + entry.getKey() + ", Value: " + entry.getValue());
         }
     }
 }

@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.util.Utf8;
 
 /***
@@ -15,13 +18,9 @@ import org.apache.avro.util.Utf8;
  date: 2024-03-17
  update: 2024-03-21
  */
+@Slf4j
+@NoArgsConstructor
 public class Deserialize {
-
-    /***
-     * Construtor vazio
-     */
-    public Deserialize() {
-    }
 
     /***
      * Converte uma lista de Maps contendo JSONPaths na Chave em Json
@@ -49,7 +48,6 @@ public class Deserialize {
             }
             convertedData.put(key, value);
         }
-
         return convertedData;
     }
 
